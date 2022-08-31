@@ -1,0 +1,13 @@
+p.red-back {
+    background-color: #e06e6e;
+}
+
+p.blue-font {
+    color: blue;
+}
+
+.div-block {
+    width: 50%;
+    height: 100%;
+    margin: 16px;
+}
