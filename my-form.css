@@ -1,0 +1,52 @@
+.my-form {
+    margin: auto;
+    margin-top: 2em;
+    width: 75%;
+    height: 100%;
+    border: 1px dashed rgb(82, 82, 82);
+    border-radius: 10px;
+    padding: 1.8em;
+    line-height: 2em;
+    background-color: rgba(127, 255, 212, 0.069);
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.my-form input[type=text] {
+    width: 65%;
+    height: 30px;
+    float: right;
+    border: 1px solid rgb(56, 71, 60);
+    border-radius: 5px;
+    background-color: rgb(247, 255, 248);
+    outline: none;
+    transition: 0.25s;
+}
+
+.my-form input[type=text]:focus{
+    border-color: rgba(98, 81, 59, 0.737);
+    background-color: rgba(79, 79, 79, 0.084);
+}
+
+.my-form input[type=submit] {
+    display: block;
+    margin: auto;
+    margin-bottom: 0px;
+    padding: 8px 16px;
+    height: 3em;
+    width: 50%;
+    border: 1px double rgb(240, 255, 127);
+    background-color: rgba(70, 160, 72, 0.9);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.117);
+    transition: 0.25s;
+}
+
+.my-form input[type=submit]:hover {
+    background-color: rgba(70, 160, 72,1);
+}
+
+.my-form span {
+    display: block;
+    margin-bottom: 1.5em;
+}

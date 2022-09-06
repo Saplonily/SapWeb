@@ -1,0 +1,67 @@
+.navg-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.navg-bar ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(58, 58, 58);
+    overflow: auto;
+}
+
+.navg-bar ul li {
+    float: left;
+    border-right: 2px dashed rgb(70, 70, 70);
+}
+
+.navg-bar ul li:last-child {
+    border-right: none;
+}
+
+a.navg-selection,
+a.navg-selection:visited,
+a.navg-selection:active {
+    display: block;
+    text-decoration: none;
+    padding: 16px 1.2em;
+    color: rgb(227, 227, 227);
+    text-align: center;
+    transition: 0.2s;
+}
+
+.navg-bar ul li.right {
+    float: right;
+}
+
+a.navg-selection:not(.navg-selected):hover {
+    background-color: rgb(131, 131, 131);
+}
+
+a.navg-selected {
+    background-color: green;
+}
+
+/*搜索栏*/
+.search-form a {
+    display: block;
+    padding: 14px 1.2em 10px 1.2em;
+}
+
+.search-form input[type=text]
+{
+    width: 300px;
+    height: 24px;
+    outline: none;
+    border: 1px solid rgb(131, 131, 131);
+    border-radius: 4px;
+    border-color: antiquewhite;
+    padding-left: 32px;
+
+    background-image: url('http://static.runoob.com/images/mix/searchicon.png');
+    background-repeat: no-repeat;
+    background-position: 4px 3px;
+}
