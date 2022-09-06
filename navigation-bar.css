@@ -51,8 +51,7 @@ a.navg-selected {
     padding: 14px 1.2em 10px 1.2em;
 }
 
-.search-form input[type=text]
-{
+.search-form input[type=text] {
     width: 300px;
     height: 24px;
     outline: none;
@@ -61,7 +60,13 @@ a.navg-selected {
     border-color: antiquewhite;
     padding-left: 32px;
 
-    background-image: url('http://static.runoob.com/images/mix/searchicon.png');
+    background-image: url('searchicon.png');
     background-repeat: no-repeat;
     background-position: 4px 3px;
+
+    transition: 0.25s;
+}
+
+.search-form input[type=text]:focus {
+    background-color: rgb(255, 248, 239);
 }
