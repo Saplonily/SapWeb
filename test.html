@@ -7,26 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta lang="zh">
     <title>Test.html</title>
-    <link rel="stylesheet" href="navigation-bar.css">
+    <link rel="stylesheet" href="nav-bar.css">
     <link rel="stylesheet" href="my-form.css">
 </head>
 
 <body id="body">
     <div class="navg-bar">
-        <ul>
-            <li><a href="#" class="navg-selection navg-selected">首页</a></li>
-            <li><a href="#" class="navg-selection">个人主页</a></li>
-            <li><a href="#" class="navg-selection">披萨列表</a></li>
-            <li><a href="#" class="navg-selection">电影列表</a></li>
-            <li class="right"><a href="#" class="navg-selection">列表</a></li>
-            <li class="right">
-                <form class="search-form">
-                    <a>
-                        <input type="text" placeholder="Search something...">
-                    </a>
-                </form>
-            </li>
-        </ul>
+        <div class="item selection selected"><a href="#">首页</a></div>
+        <div class="item selection"><a href="#">个人主页</a></div>
+        <div class="item selection"><a href="#">披萨列表</a></div>
+        <div class="item selection"><a href="#">电影列表</a></div>
+        <div class="item selection right"><a href="#">列表</a></div>
+        <div class="item right">
+            <form class="search-form">
+                <input type="text" placeholder="Search something...">
+            </form>
+        </div>
     </div>
     <div class="main-container">
         <div class="my-form">
