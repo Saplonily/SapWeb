@@ -1,0 +1,121 @@
+.command-info {
+    margin: 8px;
+    padding: 4px;
+    border: 2px solid pink;
+    background-color: rgb(255, 249, 241);
+    border-radius: 8px;
+}
+
+.command-info>.command-name::before {
+    content: "|";
+    height: auto;
+    width: 1px;
+    background-color: black;
+    color: black;
+    overflow: hidden;
+    margin-left: 0.1em;
+    margin-right: 1em;
+    opacity: 0.5;
+}
+
+.command-info>.command-name {
+    line-height: 2em;
+    font-size: 1.4em;
+    display: block;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.02);
+    margin-bottom: 1em;
+    color: orange;
+}
+
+.command-info>.command-form,
+.command-info .command-return {
+    font-style: italic;
+    display: block;
+}
+
+.command-info>.command-form-ins,
+.command-info>.command-return-ins {
+    display: block;
+    padding: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin: 1em 0px;
+}
+
+.command-info .cmt {
+    font-style: italic;
+    font-size: 0.85em;
+}
+
+.command-info .variable {
+    font-style: italic;
+    border-bottom: 1px dotted black;
+}
+
+.command-info .special-return {
+    font-style: italic;
+    color: rgb(46, 38, 38);
+}
+
+
+.main-container .column-main {
+    margin: auto;
+    width: 60%;
+}
+
+.main-container .column-main .card,
+.column-left-nav .card {
+    padding: 12px;
+}
+
+.main-container .column-left-nav {
+    float: left;
+    position: sticky;
+    top: 15%;
+    width: 20%;
+    margin-top: 20%;
+}
+
+#space-warning {
+    color: red;
+    text-shadow: 1px 1px 1px rgba(255, 0, 0, 0.05);
+    border-radius: 4px;
+    background-color: rgb(250, 215, 215);
+    border-style: dotted;
+    font-size: 2em;
+}
+
+.template {
+    display: none;
+}
+
+@media only screen and (max-width: 640px) {
+    .nav-bar {
+        border: none;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+        height: auto;
+    }
+
+    .nav-bar .item {
+        display: block;
+        width: 100%;
+        float: none;
+        height: 32px;
+    }
+
+    .main-container .column-main {
+        margin: auto;
+        width: 100%;
+    }
+
+    .main-container .column-left-nav {
+        float: none;
+        display: none;
+    }
+}
+
+@media only screen and (max-width:860px) {
+    .main-container .column-left-nav {
+        font-size: 0.4em;
+    }
+}
