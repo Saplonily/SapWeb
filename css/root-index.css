@@ -42,15 +42,15 @@ footer a {
     color: black;
 }
 
-.main-container {
-    width: 50%;
-    margin: auto;
-}
-
 .main-container .card p {
     line-height: 1.8em;
     font-size: 1.2em;
     text-align: center;
+}
+
+.main-container {
+    width: 50%;
+    margin: auto;
 }
 
 .main-container .card {
