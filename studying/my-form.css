@@ -1,18 +1,9 @@
 .my-form {
-    margin: auto;
-    margin-top: 2em;
-    width: 75%;
-    height: 100%;
-    border: 1px dashed rgb(82, 82, 82);
-    border-radius: 10px;
-    padding: 1.8em;
-    line-height: 2em;
-    background-color: rgba(127, 255, 212, 0.069);
-    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.2);
+    line-height: 1.8em;
 }
 
 .my-form input[type=text] {
-    width: 65%;
+    width: 55%;
     height: 30px;
     float: right;
     border: 1px solid rgb(56, 71, 60);
@@ -20,6 +11,8 @@
     background-color: rgb(247, 255, 248);
     outline: none;
     transition: 0.25s;
+    
+    padding: 0px 0.45em;
 }
 
 .my-form input[type=text]:focus{

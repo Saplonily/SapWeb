@@ -3,45 +3,64 @@
     padding: 0px;
 }
 
-.navg-bar {
+.nav-bar {
     background-color: rgb(38, 84, 84);
     box-shadow: 1px 2px 4px rgba(131, 131, 131, 0.5);
     border: 1px solid rgb(88, 106, 93);
-    overflow: hidden;
-    height: 64px;
+    height: 48px;
+
+    margin-bottom: 25px;
 }
 
-.navg-bar .selection {
+.nav-bar .selection {
+    display: block;
     transition: 0.15s;
 }
 
-.navg-bar .item {
+.nav-bar .item {
     float: left;
     height: inherit;
 }
 
-.navg-bar .selection>a {
+.nav-bar .item.centered-text {
+    padding: 0px auto;
+}
+
+.nav-bar .item.centered-text span {
+    padding: 0px 48px;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translate(0px, -50%);
+
+    color: white;
+}
+
+.nav-bar .selection>span {
     display: inline-block;
     position: relative;
     top: 50%;
     transform: translate(0px, -50%);
 
-    box-sizing: border-box;
     padding: 0px 20px;
     text-decoration: none;
     color: rgb(227, 227, 227);
 }
 
-.navg-bar .right {
+.nav-bar .right {
     float: right;
 }
 
-.navg-bar .selection.selected {
+.nav-bar .selection.selected {
     background-color: green;
 }
 
-.navg-bar .selection:hover:not(.selected) {
+.nav-bar .selection:hover:not(.selected) {
     background-color: rgb(131, 131, 131);
+}
+
+.nav-bar .selection:hover {
+    cursor: pointer;
 }
 
 
@@ -64,12 +83,12 @@
     border-radius: 5px;
     padding-left: 32px;
 
-    background-image: url('searchicon.png');
+    background-image: url('/res/searchicon.png');
     background-repeat: no-repeat;
     background-position: 4px 3px;
     background-color: rgb(231, 231, 231);
 
-    transition: 0.15s ease;
+    transition: 0.15s;
 }
 
 .search-form input[type=text]:focus {
