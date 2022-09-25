@@ -83,3 +83,23 @@ footer {
     transform: translate(-50%, 0px);
     transition: 0.3s;
 }
+
+#copyright,
+#email-me {
+    margin-top: 1em;
+    display: block;
+    text-align: center;
+}
+#copyright{
+    color: lightgrey;
+}
+
+#email-me{
+    margin-bottom: 2em;
+}
+
+#copyright strong,
+#email-me strong
+{
+    color: rgb(82, 186, 139);
+}
