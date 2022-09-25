@@ -7,12 +7,12 @@
 footer a {
     text-decoration: none;
     color: rgb(1, 132, 128);
-    transition: 0.1s;
+    transition: 0.3s;
     border-bottom: 1px dashed rgb(1, 132, 128, 0);
 }
 
 .main-container a:hover,
-footer a {
+footer a:hover {
     border-bottom: 1px dashed rgb(1, 132, 128);
 }
 
@@ -49,8 +49,14 @@ footer a {
 }
 
 .main-container {
-    width: 50%;
+    width: 70%;
     margin: auto;
+}
+
+@media screen and (max-width:500px) {
+    .main-container {
+        width: 100%;
+    }
 }
 
 .main-container .card {
@@ -71,5 +77,9 @@ footer {
     display: inline-block;
     position: relative;
     left: 50%;
-    transform: translate(-50px, 0px);
+
+    font-size: 20px;
+
+    transform: translate(-50%, 0px);
+    transition: 0.3s;
 }
