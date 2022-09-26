@@ -14,7 +14,7 @@
 .background-container .background {
     width: 100%;
     height: 100%;
-    background-image: url('../res/heavy/background.png');
+    background-image: url('../res/heavy/background.webp');
     background-size: cover;
 
     transform-origin: center;
