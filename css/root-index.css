@@ -3,6 +3,30 @@
     padding: 0px;
 }
 
+.background-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-container .background {
+    width: 100%;
+    height: 100%;
+    background-image: url('../res/heavy/background.png');
+    background-size: cover;
+
+    transform-origin: center;
+    max-width: 100%;
+    max-height: 100%;
+    transform: scale(1.1);
+
+    transition: 1s;
+
+    filter: blur(16px) opacity(80%);
+}
+
 .main-container a,
 footer a {
     text-decoration: none;
@@ -60,6 +84,7 @@ footer a:hover {
 }
 
 .main-container .card {
+    background-color: rgba(245, 245, 245, 0.75);
     border: 1px solid rgb(141, 135, 255);
     border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -90,16 +115,16 @@ footer {
     display: block;
     text-align: center;
 }
-#copyright{
+
+#copyright {
     color: lightgrey;
 }
 
-#email-me{
+#email-me {
     margin-bottom: 2em;
 }
 
 #copyright strong,
-#email-me strong
-{
+#email-me strong {
     color: rgb(82, 186, 139);
 }
