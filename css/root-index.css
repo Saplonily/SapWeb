@@ -22,16 +22,15 @@
     max-height: 100%;
     transform: scale(1.1);
 
-    transition: 1s;
-
     filter: blur(16px) opacity(80%);
 }
 
 .main-container a,
-footer a {
+footer a,
+.account-dropdown .dropdown-items li a {
     text-decoration: none;
     color: rgb(1, 132, 128);
-    transition: 0.3s;
+    transition: border 0.3s;
     border-bottom: 1px dashed rgb(1, 132, 128, 0);
 }
 
@@ -54,6 +53,10 @@ footer a:hover {
     text-decoration: none;
 
     padding: 0px 32px 0px;
+}
+
+.nav-bar>.nav-item.nav-right {
+    float: right;
 }
 
 .nav-bar>.nav-item .nav-text {
@@ -106,7 +109,7 @@ footer {
     font-size: 20px;
 
     transform: translate(-50%, 0px);
-    transition: 0.3s;
+    transition: border 0.3s;
 }
 
 #copyright,
@@ -127,4 +130,58 @@ footer {
 #copyright strong,
 #email-me strong {
     color: rgb(82, 186, 139);
+}
+
+/* 个人账号-下拉栏部分 */
+.account-dropdown {
+    cursor: pointer;
+}
+
+.account-dropdown:hover .dropdown-items {
+    display: block;
+}
+
+.account-dropdown {
+    overflow: visible;
+    position: relative;
+}
+
+
+.account-dropdown .dropdown-items {
+    display: none;
+    list-style: none;
+    list-style-type: none;
+    overflow: hidden;
+
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+}
+
+.account-dropdown .dropdown-items li {
+    box-sizing: border-box;
+    background-color: white;
+    text-align: center;
+}
+
+.account-dropdown .dropdown-items li .text {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 16px 0;
+}
+
+.account-dropdown .dropdown-items li:hover {
+    background-color: whitesmoke;
+}
+
+.account-dropdown-animation {
+    color: rgb(68, 104, 78);
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.account-dropdown:hover .account-dropdown-animation {
+    transform: rotate(450deg);
 }
