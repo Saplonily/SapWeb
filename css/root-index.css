@@ -149,22 +149,24 @@ footer {
     list-style     : none;
     list-style-type: none;
     overflow       : hidden;
-    border-radius: 4px;
+    border-radius  : 4px;
 
     width   : 100%;
     position: absolute;
     top     : 100%;
     left    : 0%;
 
-    transition: opacity 0.4s, transform 0.4s;
+    transition: opacity 0.2s, transform 0.4s, visibility 0.4s;
     opacity   : 0;
 
-    transform: translateY(1em);
+    transform-origin: 50% 0;
+    transform : translateY(-1em) scale(0.8);
+    visibility: hidden;
 }
 
 .account-dropdown:hover .dropdown-items {
-    display: block;
-    opacity: 1;
+    visibility: visible;
+    opacity   : 1;
 
     transform: translateY(0);
 }
