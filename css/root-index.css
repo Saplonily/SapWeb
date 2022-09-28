@@ -149,19 +149,24 @@ footer {
     list-style     : none;
     list-style-type: none;
     overflow       : hidden;
-    border-radius  : 4px;
+    visibility     : hidden;
 
-    width   : 100%;
     position: absolute;
     top     : 100%;
     left    : 0%;
 
-    transition: opacity 0.2s, transform 0.4s, visibility 0.4s;
-    opacity   : 0;
+    width: 100%;
+
+    opacity: 0;
+
+    border-radius: 0px 0px 16px 16px;
 
     transform-origin: 50% 0;
-    transform : translateY(-1em) scale(0.8);
-    visibility: hidden;
+    transform       : translateY(-1em) scale(0.75);
+    transition      :
+        opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.4s;
 }
 
 .account-dropdown:hover .dropdown-items {
@@ -201,7 +206,7 @@ footer {
 .account-dropdown-animation {
     color     : rgb(68, 104, 78);
     display   : inline-block;
-    transition: transform 0.5s;
+    transition: transform 1.14s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
 .account-dropdown:hover .account-dropdown-animation {
