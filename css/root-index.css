@@ -159,7 +159,7 @@ footer {
     transition: opacity 0.4s, transform 0.4s;
     opacity   : 0;
 
-    transform: translateY(-1em);
+    transform: translateY(1em);
 }
 
 .account-dropdown:hover .dropdown-items {
