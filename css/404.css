@@ -17,10 +17,17 @@ p {
 
 #p-info {
     box-shadow      : 2px 2px 5px rgba(0, 0, 0, 0.258);
-    width           : 500px;
+    box-sizing      : border-box;
+    width           : 100%;
     margin          : auto;
     background-color: antiquewhite;
     padding         : 4px;
     border          : 1px solid rebeccapurple;
     border-radius   : 4px;
+}
+
+@media screen and (min-width:500px) {
+    #p-info {
+        width: 500px;
+    }
 }
