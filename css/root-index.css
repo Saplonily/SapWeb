@@ -159,7 +159,8 @@ footer {
 
     opacity: 0;
 
-    border-radius: 0px 0px 16px 16px;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02);
 
     transform-origin: 50% 0;
     transform       : translateY(-1em) scale(0.75);
@@ -206,9 +207,9 @@ footer {
 .account-dropdown-animation {
     color     : rgb(68, 104, 78);
     display   : inline-block;
-    transition: transform 1.14s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transition: transform 0.314s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
 .account-dropdown:hover .account-dropdown-animation {
-    transform: rotate(450deg);
+    transform: rotate(90deg);
 }
