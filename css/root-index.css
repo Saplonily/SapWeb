@@ -1,3 +1,4 @@
+/*#region 根与全局*/
 :root {
     --nav-background   : aliceblue;
     --background-filter: blur(4px) opacity(80%);
@@ -10,6 +11,24 @@
     margin : 0px;
     padding: 0px;
 }
+
+/*#endregion*/
+
+/*#region 网站默认a标签样式*/
+a:not(.none-site-a) {
+    text-decoration: none;
+    color          : rgb(43, 160, 115);
+    transition     : border 0.25s;
+    border-bottom  : 1px solid rgb(1, 132, 128, 0);
+}
+
+a:not(.none-site-a):hover {
+    border-color: rgb(1, 132, 128);
+}
+
+/*#endregion*/
+
+/*#region 背景相关*/
 
 .background-container {
     position: fixed;
@@ -33,20 +52,9 @@
     filter: var(--background-filter);
 }
 
-.main-container a,
-footer a,
-.account-dropdown .dropdown-items li a {
-    text-decoration: none;
-    color          : rgb(1, 132, 128);
-    transition     : border 0.3s;
-    border-bottom  : 1px dashed rgb(1, 132, 128, 0);
-}
+/*#endregion*/
 
-.main-container a:hover,
-footer a:hover {
-    border-bottom: 1px dashed rgb(1, 132, 128);
-}
-
+/*#region 导航栏*/
 .nav-bar {
     width : 100%;
     height: 64px;
@@ -77,6 +85,9 @@ footer a:hover {
     color: var(--nav-text-color);
 }
 
+/*#endregion*/
+
+/*#region 主要文字容器*/
 .main-container .card p {
     line-height: 1.8em;
     font-size  : 1.2em;
@@ -104,43 +115,9 @@ footer a:hover {
     margin : 32px;
 }
 
-footer {
-    width : 100%;
-    height: 2em;
-}
+/*#endregion*/
 
-.meoicp {
-    display : inline-block;
-    position: relative;
-    left    : 50%;
-
-    font-size: 20px;
-
-    transform : translate(-50%, 0px);
-    transition: border 0.3s;
-}
-
-#copyright,
-#email-me {
-    margin-top: 1em;
-    display   : block;
-    text-align: center;
-}
-
-#copyright {
-    color: lightgrey;
-}
-
-#email-me {
-    margin-bottom: 2em;
-}
-
-#copyright strong,
-#email-me strong {
-    color: rgb(82, 186, 139);
-}
-
-/* 个人账号-下拉栏部分 */
+/*#region 个人账号-下拉栏部分 */
 .account-dropdown {
     cursor: pointer;
 }
@@ -160,7 +137,7 @@ footer {
     opacity: 0;
 
     border-radius: 0px 0px 8px 8px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02);
+    box-shadow   : 0px 3px 5px rgba(0, 0, 0, 0.02);
 
     transform-origin: 50% 0;
     transform       : translateY(-1em) scale(0.75);
@@ -181,8 +158,6 @@ footer {
     overflow: visible;
     position: relative;
 }
-
-
 
 .account-dropdown .dropdown-items li {
     box-sizing      : border-box;
@@ -213,3 +188,36 @@ footer {
 .account-dropdown:hover .account-dropdown-animation {
     transform: rotate(90deg);
 }
+
+/*#endregion*/
+
+/*#region 页面footer部分*/
+
+footer {
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+
+    margin: 1em 0;
+}
+
+footer .ipv6-support {
+    position      : relative;
+    vertical-align: middle;
+}
+
+footer .copyright {
+    color: lightgrey
+}
+
+footer .meo-icp {
+    font-size: 1.2em;
+}
+
+footer span strong {
+    color: rgb(82, 186, 139)
+}
+
+/*#endregion*/
