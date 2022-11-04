@@ -12,14 +12,18 @@
     padding: 0px;
 }
 
+body {
+    background-color: #f6f6f6;
+}
+
 /*#endregion*/
 
 /*#region 网站默认a标签样式*/
 a:not(.none-site-a) {
     text-decoration: none;
-    color          : rgb(43, 160, 115);
+    color          : rgb(44, 123, 93);
     transition     : border 0.25s;
-    border-bottom  : 1px solid rgb(1, 132, 128, 0);
+    border-bottom  : 1px dashed rgb(1, 132, 128, 0);
 }
 
 a:not(.none-site-a):hover {
@@ -91,7 +95,10 @@ a:not(.none-site-a):hover {
 .main-container .card p {
     line-height: 1.8em;
     font-size  : 1.2em;
-    text-align : center;
+}
+
+.main-container .card h4 {
+    line-height: 1.8em;
 }
 
 .main-container {
@@ -111,8 +118,13 @@ a:not(.none-site-a):hover {
     border-radius   : 10px;
     box-shadow      : 0px 2px 5px rgba(0, 0, 0, 0.2);
 
-    padding: 48px 32px 48px;
+    padding: 14px 32px 14px;
     margin : 32px;
+}
+
+.main-container hr {
+    margin-top   : 8px;
+    margin-bottom: 8px;
 }
 
 /*#endregion*/
@@ -209,7 +221,7 @@ footer .ipv6-support {
 }
 
 footer .copyright {
-    color: lightgrey
+    color: rgb(86, 86, 86)
 }
 
 footer .meo-icp {
@@ -218,6 +230,32 @@ footer .meo-icp {
 
 footer span strong {
     color: rgb(82, 186, 139)
+}
+
+/*#endregion*/
+
+/*#region 主卡片的a标签*/
+
+.main-container a.main-link {
+    box-sizing: border-box;
+    display   : inline-block;
+    position  : relative;
+    top       : 5px;
+
+    transform-origin: 0.5 0.5;
+    transition      : transform 0.5s, border 0.5s;
+
+    width : 16px;
+    height: 1em;
+
+    border       : 2px solid #badff4;
+    border-radius: 6px;
+}
+
+.main-container a.main-link:hover {
+    transform    : rotate(180deg);
+    border       : 2px solid #384f5d;
+    border-radius: 0px;
 }
 
 /*#endregion*/
