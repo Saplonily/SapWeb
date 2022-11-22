@@ -22,8 +22,11 @@ body {
 a:not(.none-site-a) {
     text-decoration: none;
     color          : rgb(44, 123, 93);
-    transition     : border 0.25s;
-    border-bottom  : 1px dashed rgb(1, 132, 128, 0);
+}
+
+a.href-with-underline:not(.none-site-a) {
+    transition   : border 0.25s;
+    border-bottom: 1px dashed rgb(1, 132, 128, 0);
 }
 
 a:not(.none-site-a):hover {
