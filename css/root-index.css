@@ -130,6 +130,10 @@ a:not(.none-site-a):hover {
     margin-bottom: 8px;
 }
 
+.main-container .card .little {
+    font-size: 1em;
+}
+
 /*#endregion*/
 
 /*#region 个人账号-下拉栏部分 */
