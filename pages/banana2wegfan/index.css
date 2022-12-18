@@ -45,3 +45,8 @@ a:hover
 {
     border-bottom: 3px dashed plum;
 }
+
+.link-example{
+    font-size: 0.5em;
+    border-bottom: 2px dotted palevioletred;
+}
