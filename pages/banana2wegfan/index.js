@@ -6,7 +6,7 @@ console.log("hello here, i known you open the console.")
 let inputBox = document.getElementById("input-link");
 let result_a =  document.getElementById("result-a");
 inputBox.oninput = () => {
-    var pattern = /#FileInfo_884281\s*$/,
+    var pattern = /#FileInfo_\s*$/,
         str = inputBox.value;
 
     var r = pattern.exec(str);
