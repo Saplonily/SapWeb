@@ -1,4 +1,6 @@
 {
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "everest.yaml schema - bysap",
     "title": "everest.yaml schema",
     "description": "Helping hand to writing everest.yaml files.",
     "type": "array",
@@ -48,7 +50,7 @@
                     }
                 }
             },
-            "OptionalDependencies":{
+            "OptionalDependencies": {
                 "type": "array",
                 "title": "Mod OptionalDependencies",
                 "description": "OptionalDependencies of your mod.",
