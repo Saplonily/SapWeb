@@ -1,0 +1,75 @@
+{
+    "title": "everest.yaml schema",
+    "description": "Helping hand to writing everest.yaml files.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "description": "A EverestModule to be registered.",
+        "required": [
+            "Name",
+            "Version",
+            "Dependencies"
+        ],
+        "properties": {
+            "Name": {
+                "type": "string",
+                "title": "Mod Name",
+                "description": "Your mod name."
+            },
+            "Version": {
+                "type": "string",
+                "title": "Mod Version",
+                "description": "The version of your mod."
+            },
+            "DLL": {
+                "type": "string",
+                "title": "DLL Path",
+                "description": "Your .dll file path if this is a Code Mod."
+            },
+            "Dependencies": {
+                "type": "array",
+                "title": "Mod Dependencies",
+                "description": "Dependencies of your mod.",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "Name",
+                        "Version"
+                    ],
+                    "properties": {
+                        "Name": {
+                            "type": "string",
+                            "title": "Mod name of this dependency"
+                        },
+                        "Version": {
+                            "type": "string",
+                            "title": "Minimum required of this dependency"
+                        }
+                    }
+                }
+            },
+            "OptionalDependencies":{
+                "type": "array",
+                "title": "Mod OptionalDependencies",
+                "description": "OptionalDependencies of your mod.",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "Name",
+                        "Version"
+                    ],
+                    "properties": {
+                        "Name": {
+                            "type": "string",
+                            "title": "Mod name of this optional dependency"
+                        },
+                        "Version": {
+                            "type": "string",
+                            "title": "Minimum required of this optional dependency"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
