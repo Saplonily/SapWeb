@@ -1,3 +1,7 @@
 [submodule "homo"]
 	path = pages/homo
 	url = https://github.com/Saplonily/homo.git
+
+[submodule "learn_opengl"]
+	path = pages/learn_opengl
+	url = https://github.com/LearnOpenGL-CN/learnopengl-cn.github.io.git
