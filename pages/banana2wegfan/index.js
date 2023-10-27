@@ -2,7 +2,7 @@ const ex1 = "https://gamebanana.com/mods/download/150789#FileInfo_884281";
 const ex2 = "https://gamebanana.com/dl/906767";
 
 const mirrorLinkBase = "https://celeste.weg.fan/api/v2/download/gamebanana-files/";
-console.log("hello here, i known you open the console.")
+console.log("hello, i knew you open the console~")
 
 let inputBox = document.getElementById("input-link");
 let result_a = document.getElementById("result-a");
