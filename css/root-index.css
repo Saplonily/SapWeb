@@ -1,6 +1,6 @@
 /*#region 根与全局*/
 :root {
-    --nav-background   : aliceblue;
+    --nav-background   : #f6f6f6;
     --background-filter: blur(4px) opacity(80%);
 
     --width-shadow  : 2px 2px 8px rgb(0, 0, 0, 0.2);

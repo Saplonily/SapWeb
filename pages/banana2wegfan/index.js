@@ -6,6 +6,8 @@ console.log("hello here, i known you open the console.")
 
 let inputBox = document.getElementById("input-link");
 let result_a = document.getElementById("result-a");
+let result_p = document.getElementById("result-p");
+let result_p_logo = document.getElementById("result-p-logo");
 inputBox.oninput = () => {
     var pattern = /#FileInfo_[0-9]+\s*$/;
     var pattern2 = /\/dl\/[0-9]+\s*$/;
@@ -16,13 +18,31 @@ inputBox.oninput = () => {
     if (r != null) {
         let resultId = r[0].substring("#FileInfo_".length);
         let result = mirrorLinkBase + resultId;
-        result_a.innerText = result;
-        result_a.href = result;
+        applyEffect(result);
+        updateLogo(result);
+        return;
     }
     if (r2 != null) {
         let resultId = r2[0].substring("\/dl\/".length);
         let result = mirrorLinkBase + resultId;
-        result_a.innerText = result;
-        result_a.href = result;
+        applyEffect(result);
+        updateLogo(result);
+        return;
+    }
+    updateLogo(null);
+}
+
+function applyEffect(result) {
+    result_a.innerText = result;
+    result_a.href = result;
+}
+
+function updateLogo(result) {
+    if (result != null) {
+        result_p_logo.style.display = "inline";
+        result_p_logo.href = `everest:${result}`;
+    }
+    else {
+        result_p_logo.style.display = "none";
     }
 }
