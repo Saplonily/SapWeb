@@ -6,7 +6,7 @@
 	path = learn_opengl
 	url = https://github.com/LearnOpenGL-CN/learnopengl-cn.github.io.git
 [submodule "CelesteModTutorial"]
-	path = celeste_mod_tutourial
+	path = celeste_mod_tutorial
 	url = https://github.com/Saplonily/CelesteModTutorial
 	branch = gh-pages
 [submodule "CelesteCommonIssues"]
