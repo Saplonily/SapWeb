@@ -1,7 +1,11 @@
 [submodule "homo"]
-	path = pages/homo
+	path = homo
 	url = https://github.com/Saplonily/homo.git
 
 [submodule "learn_opengl"]
-	path = pages/learn_opengl
+	path = learn_opengl
 	url = https://github.com/LearnOpenGL-CN/learnopengl-cn.github.io.git
+[submodule "CelesteModTutorial"]
+	path = celeste_mod_tutourial
+	url = https://github.com/Saplonily/CelesteModTutorial
+	branch = gh-pages
