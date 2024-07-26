@@ -1,0 +1,96 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-bar {
+    background-color: rgb(38, 84, 84);
+    box-shadow: 1px 2px 4px rgba(131, 131, 131, 0.5);
+    border: 1px solid rgb(88, 106, 93);
+    height: 48px;
+
+    margin-bottom: 25px;
+}
+
+.nav-bar .selection {
+    display: block;
+    transition: 0.15s;
+}
+
+.nav-bar .item {
+    float: left;
+    height: inherit;
+}
+
+.nav-bar .item.centered-text {
+    padding: 0px auto;
+}
+
+.nav-bar .item.centered-text span {
+    padding: 0px 48px;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translate(0px, -50%);
+
+    color: white;
+}
+
+.nav-bar .selection>span {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translate(0px, -50%);
+
+    padding: 0px 20px;
+    text-decoration: none;
+    color: rgb(227, 227, 227);
+}
+
+.nav-bar .right {
+    float: right;
+}
+
+.nav-bar .selection.selected {
+    background-color: green;
+}
+
+.nav-bar .selection:hover:not(.selected) {
+    background-color: rgb(131, 131, 131);
+}
+
+.nav-bar .selection:hover {
+    cursor: pointer;
+}
+
+
+/*搜索栏*/
+.search-form {
+    display: inline-block;
+    width: auto;
+    overflow: hidden;
+
+    position: relative;
+    top: 50%;
+    transform: translate(0px, -50%);
+}
+
+.search-form input[type=text] {
+    width: 150px;
+    height: 25px;
+    outline: none;
+    border: 1px solid rgb(38, 38, 38);
+    border-radius: 5px;
+    padding-left: 32px;
+
+    background-image: url('/res/searchicon.png');
+    background-repeat: no-repeat;
+    background-position: 4px 3px;
+    background-color: rgb(231, 231, 231);
+
+    transition: 0.15s;
+}
+
+.search-form input[type=text]:focus {
+    width: 300px;
+}

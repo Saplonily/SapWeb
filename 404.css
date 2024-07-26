@@ -1,0 +1,34 @@
+#div404 {
+    margin: 1em auto 0px auto;
+}
+
+#p404 {
+    font-size: 3em;
+}
+
+p {
+    text-align: center;
+}
+
+#text404 {
+    color      : rgb(255, 78, 78);
+    text-shadow: 2px 1px 5px rgb(255, 183, 183);
+}
+
+#p-info {
+    box-shadow      : 2px 2px 5px rgba(0, 0, 0, 0.258);
+    box-sizing      : border-box;
+    width           : 100%;
+    margin          : auto;
+    background-color: antiquewhite;
+    padding         : 4px;
+    border          : 1px solid rebeccapurple;
+    border-radius   : 4px;
+}
+
+@media screen and (min-width:500px) {
+    #p-info {
+        width: 648px;
+        line-height: 2em;
+    }
+}
