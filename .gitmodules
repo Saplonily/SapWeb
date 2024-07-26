@@ -9,3 +9,7 @@
 	path = celeste_mod_tutourial
 	url = https://github.com/Saplonily/CelesteModTutorial
 	branch = gh-pages
+[submodule "CelesteCommonIssues"]
+	path = celeste_common_issues
+	url = https://github.com/Saplonily/CelesteCommonIssues
+	branch = gh-pages
