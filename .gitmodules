@@ -13,3 +13,7 @@
 	path = celeste_common_issues
 	url = https://github.com/Saplonily/CelesteCommonIssues
 	branch = gh-pages
+[submodule "celeste_wiki"]
+	path = celeste_wiki
+	url = https://github.com/LuckyBoy-7/CelesteWikiModule
+	branch = gh-pages
