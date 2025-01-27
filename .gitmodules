@@ -2,9 +2,6 @@
 	path = homo
 	url = https://github.com/Saplonily/homo.git
 
-[submodule "learn_opengl"]
-	path = learn_opengl
-	url = https://github.com/LearnOpenGL-CN/learnopengl-cn.github.io.git
 [submodule "CelesteModTutorial"]
 	path = celeste_mod_tutorial
 	url = https://github.com/Saplonily/CelesteModTutorial
