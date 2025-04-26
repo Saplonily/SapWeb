@@ -1,0 +1,572 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #eaf3fa;
+}
+.container {
+    width: 100%; /* 修改为占满父容器宽度 */
+    max-width: 1200px; /* 添加最大宽度限制 */
+    height: 85%;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    margin: 0 auto; /* 居中容器 */
+    margin-top: 60px; /* 为顶部导航栏留出空间 */
+}
+.left-panel {
+    width: 25%; /* 调整宽度比例 */
+    background-color: #cde4f6;
+    padding: 15px;
+    box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.05);
+    border-right: 1px solid #b3d3ea;
+    box-sizing: border-box; /* 确保内边距和边框包含在宽度内 */
+}
+.left-panel h3 {
+    font-size: 18px;
+    color: #0a3a6e;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #5a91c8;
+    padding-bottom: 5px;
+}
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box; /* 确保内边距和边框包含在宽度内 */
+    overflow-x: hidden; /* 防止内容水平溢出 */
+}
+.title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #4a7bbd;
+    margin-bottom: 10px;
+}
+.description {
+    font-size: 14px;
+    color: #6b9ed6;
+    margin-bottom: 15px;
+}
+.progress {
+    font-size: 13px;
+    color: #a94d4d;
+    margin-bottom: 20px;
+}
+.answer-area {
+    flex: 1; /* 占满剩余空间 */
+    display: flex;
+    flex-direction: column; /* 垂直布局 */
+    align-items: center; /* 居中对齐 */
+    padding: 10px;
+    background: #f9fbfd; /* 更浅的背景色 */
+    border-radius: 8px; /* 四边圆角 */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #b3d3ea; /* 四边边框 */
+    animation: slideIn 0.6s ease forwards;
+    opacity: 0; /* 初始隐藏 */
+}
+.start-button {
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #c94a4a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center; /* 居中按钮 */
+    margin-top: auto; /* 自动向下对齐 */
+    margin-bottom: auto; /* 自动向上对齐 */
+}
+.start-button:hover {
+    background-color: #a83c3c;
+    transform: scale(1.05);
+}
+.answer-input {
+    width: calc(100% - 20px); /* 确保输入框不会超出容器宽度 */
+    max-width: 600px; /* 添加最大宽度限制 */
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #b3d3ea;
+    border-radius: 4px;
+    box-sizing: border-box;
+    opacity: 0; /* 初始透明度 */
+    transform: translateY(-10px); /* 初始位置 */
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.answer-input:focus {
+    outline: none; /* 移除默认的聚焦样式 */
+    border-color: #4a7bbd; /* 聚焦时的边框颜色 */
+    box-shadow: 0 0 8px rgba(74, 123, 189, 0.5); /* 添加柔和的蓝色阴影 */
+}
+.answer-input.show {
+    opacity: 1; /* 显示时完全不透明 */
+    transform: translateY(0); /* 回到原始位置 */
+}
+.give-up-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #f57c00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    opacity: 0; /* 初始透明度 */
+    transform: translateY(-10px); /* 初始位置 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 动画效果 */
+}
+.give-up-button.show {
+    opacity: 1; /* 显示时完全不透明 */
+    transform: translateY(0); /* 回到原始位置 */
+}
+.give-up-button:hover {
+    background-color: #e65100;
+}
+.correct-answers {
+    width: 100%; /* 确保已答对区域占满容器宽度 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #b3d3ea;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box; /* 确保内边距和边框包含在宽度内 */
+}
+.correct-answer {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 2px solid #4caf50;
+    border-radius: 4px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    animation: popIn 0.4s ease forwards;
+    opacity: 0; /* 初始隐藏 */
+}
+.hidden {
+    display: none !important; /* 隐藏元素 */
+}
+.question-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.question-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0; /* 初始隐藏 */
+}
+.question-list li:hover {
+    background-color: #bbdefb;
+    transform: scale(1.02);
+}
+.question-list li.selected {
+    background-color: #64b5f6;
+    color: white;
+    font-weight: bold;
+}
+.retry-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.retry-button:hover {
+    background-color: #1565c0;
+}
+.unanswered {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 2px solid #f44336; /* 红色边框 */
+    border-radius: 4px;
+    background-color: #ffebee;
+    color: #d32f2f;
+    animation: popIn 0.4s ease forwards;
+    opacity: 0; /* 初始隐藏 */
+}
+
+/* 计时器样式 */
+.timer {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a7bbd;
+    margin: 10px; /* 与输入框保持间距 */
+    text-align: center;
+    display: none; /* 默认隐藏 */
+}
+
+.timer.show {
+    display: block; /* 显示计时器 */
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+    animation: fadeIn 0.3s ease forwards; /* 添加显示动画 */
+}
+.modal.hide {
+    animation: fadeOut 0.3s ease forwards; /* 添加隐藏动画 */
+}
+.modal-content {
+    width: calc(100% - 40px); /* 确保模态框内容不会超出屏幕宽度 */
+    max-width: 400px; /* 添加最大宽度限制 */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background: #fff;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+.modal.show .modal-content {
+    transform: scale(1); /* 放大到正常大小 */
+}
+.modal.hide .modal-content {
+    transform: scale(0.9); /* 缩小回初始大小 */
+}
+.modal-message {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+.modal-actions button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.modal-actions .modal-confirm {
+    background-color: #4caf50;
+    color: white;
+}
+.modal-actions .modal-confirm:hover {
+    background-color: #388e3c;
+}
+.modal-actions .modal-cancel {
+    background-color: #f44336;
+    color: white;
+}
+.modal-actions .modal-cancel:hover {
+    background-color: #d32f2f;
+}
+
+/* 抽屉样式 */
+.drawer {
+    position: fixed;
+    top: 60px; /* 确保抽屉在 top-bar 下面 */
+    left: -100%; /* 初始隐藏在屏幕左侧 */
+    width: 80%;
+    height: calc(100% - 60px); /* 减去 top-bar 的高度 */
+    background-color: #cde4f6;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    transition: left 0.3s ease; /* 添加平滑过渡 */
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto; /* 启用垂直滚动 */
+}
+
+.drawer.show {
+    left: 0; /* 显示抽屉 */
+    animation: slideInFromLeft 0.3s ease forwards; /* 添加向右滑入动画 */
+}
+
+.drawer.hide {
+    animation: slideOutToLeft 0.3s ease forwards; /* 添加向左滑出动画 */
+}
+
+/* 抽屉关闭按钮样式 */
+.drawer-header {
+    display: flex;
+    justify-content: space-between; /* 标题和关闭按钮两端对齐 */
+    align-items: center; /* 垂直居中 */
+}
+
+.drawer-header .close-drawer {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #0a3a6e;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: auto; /* 确保按钮右靠齐 */
+}
+
+.drawer-header .close-drawer:hover {
+    color: #5a91c8; /* 鼠标悬停时的颜色变化 */
+}
+
+/* 抽屉动画 */
+@keyframes slideInFromLeft {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slideOutToLeft {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+/* 菜单按钮样式 */
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* 默认隐藏 */
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    z-index: 3001; /* 确保按钮在 top-bar 内可见 */
+}
+
+.menu-button:hover {
+    color: #a83c3c;
+}
+
+.menu-icon {
+    font-size: 24px; /* 三条杠图标大小 */
+}
+
+/* 顶部导航栏样式 */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #4a7bbd;
+    color: white;
+    display: flex;
+    justify-content: flex-start; /* 从左到右排列 */
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 3000; /* 确保 top-bar 在最前面 */
+    box-sizing: border-box;
+}
+
+.site-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 10px; /* 为菜单按钮留出间距 */
+    white-space: nowrap; /* 防止标题换行 */
+    overflow: hidden; /* 隐藏超出部分 */
+    text-overflow: ellipsis; /* 添加省略号 */
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start; /* 从顶部开始排列 */
+        align-items: stretch; /* 拉伸内容宽度 */
+        height: auto;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .left-panel {
+        display: none; /* 隐藏左侧面板 */
+        width: 100%;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #b3d3ea;
+        box-shadow: none;
+    }
+
+    .left-panel h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .question-list li {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .right-panel {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .description {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .progress {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .answer-area {
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: none;
+        border: 1px solid #e0e0e0;
+    }
+
+    .start-button,
+    .give-up-button,
+    .retry-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .answer-input {
+        width: 100%; /* 在移动端占满宽度 */
+    }
+
+    .correct-answers {
+        gap: 5px;
+    }
+
+    .correct-answer,
+    .unanswered {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .modal-content {
+        width: 90%; /* 在移动端占 90% 宽度 */
+        max-width: 300px; /* 限制模态框最大宽度 */
+    }
+
+    .modal-message {
+        font-size: 14px;
+    }
+
+    .modal-actions button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .menu-button {
+        display: flex; /* 在移动端显示菜单按钮 */
+    }
+
+    .left-panel {
+        display: none; /* 隐藏 PC 端试题列表 */
+    }
+}
+
+@media (min-width: 769px) {
+    .drawer {
+        display: none; /* 隐藏移动端抽屉 */
+    }
+}

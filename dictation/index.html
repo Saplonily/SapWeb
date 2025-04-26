@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>默写合集</title>
+    <link rel="stylesheet" href="index.css"/> <!-- 引入外部 CSS -->
+</head>
+<body>
+    <div class="top-bar"> <!-- 顶部导航栏 -->
+        <button class="menu-button">
+            <span class="menu-icon">&#9776;</span> <!-- 三条杠图标 -->
+        </button>
+        <h1 class="site-title">默写合集</h1>
+    </div>
+    <div class="container">
+        <div class="drawer hidden"> <!-- 抽屉容器 -->
+            <div class="drawer-header">
+                <h3>默写列表</h3>
+                <button class="close-drawer">✖</button> <!-- 修复关闭按钮 -->
+            </div>
+            <ul class="question-list">
+                <!-- 动态生成试题项 -->
+            </ul>
+        </div>
+        <div class="left-panel"> <!-- PC 端试题列表 -->
+            <h3>默写列表</h3>
+            <ul class="question-list">
+                <!-- 动态生成试题项 -->
+            </ul>
+        </div>
+        <div class="right-panel">
+            <div class="title"></div>
+            <div class="description"></div>
+            <div class="progress"></div>
+            <div class="answer-area">
+                <button class="start-button">开始</button>
+                <input type="text" class="answer-input hidden" placeholder="输入答案...">
+                <button class="give-up-button hidden">放弃</button>
+                <button class="retry-button hidden">再试一次</button>
+                <div class="correct-answers hidden">
+                    <!-- 已答对区域 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden">
+        <div class="modal-content">
+            <p class="modal-message">确定要执行此操作吗？</p>
+            <div class="modal-actions">
+                <button class="modal-confirm">确定</button>
+                <button class="modal-cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script> <!-- 引入外部 JS -->
+</body>
+</html>
