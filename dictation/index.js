@@ -195,7 +195,7 @@ function startTest() {
 
     // 初始化测试
     answered = [];
-    progress.textContent = `题目进度: ${answered.length}/${currentQuestion.content.length}`;
+    progress.textContent = `默写进度: ${answered.length}/${currentQuestion.content.length}`;
     correctAnswers.innerHTML = "";
     correctAnswers.classList.remove("hidden");
 
@@ -244,7 +244,7 @@ function handleInput() {
         }, 10);
 
         // 更新进度
-        progress.textContent = `题目进度: ${answered.length}/${currentQuestion.content.length}`;
+        progress.textContent = `默写进度: ${answered.length}/${currentQuestion.content.length}`;
 
         // 检查是否完成所有词语
         if (answered.length === currentQuestion.content.length) {
