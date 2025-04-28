@@ -7,6 +7,24 @@ let isTestActive = false; // 标志变量，表示当前是否有测试进行
 let timerInterval = null; // 计时器的 interval ID
 let elapsedTime = 0; // 记录经过的时间（秒）
 
+function sendStatusUpdate(type, answered = null) {
+    const payload = {
+        Type: type,
+        QuestionID: currentQuestion.id,
+        Answered: answered,
+    };
+
+    fetch("https://dst.saplonily.top/sts/st", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    }).catch((error) => {
+        console.error("Failed to send status update:", error);
+    });
+}
+
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
@@ -215,6 +233,9 @@ function startTest() {
     }, 10); // 延迟以触发动画
 
     isTestActive = true; // 标记测试为进行中
+
+    // 发送开始状态更新
+    sendStatusUpdate("Start", null);
 }
 
 function handleInput() {
@@ -275,6 +296,9 @@ function handleSuccess() {
     retryButton.classList.remove("hidden");
 
     isTestActive = false; // 标记测试为未进行
+
+    // 发送完成状态更新
+    sendStatusUpdate("Finish", null);
 }
 
 function showModal(message, onConfirm, onCancel) {
@@ -349,6 +373,9 @@ function handleGiveUp() {
         // 停止计时器但保持显示
         clearInterval(timerInterval);
         timerInterval = null;
+
+        // 发送放弃状态更新
+        sendStatusUpdate("GiveUp", answered);
     });
 }
 
