@@ -312,7 +312,7 @@
     {
         "id": 6,
         "title": "C# 所有关键字",
-        "description": "包括 roslyn 认为的所有 Keyword 以及在 vs 中高亮为关键字的关键字, 例如 \"args\", \"value\", \"nint\" 等",
+        "description": "包括 roslyn 认为的所有 Keyword 以及在 Visual Studio 中高亮为关键字的\"关键字\"",
         "content": [
             "bool",
             "byte",
