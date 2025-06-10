@@ -8,6 +8,7 @@ let timerInterval = null; // 计时器的 interval ID
 let elapsedTime = 0; // 记录经过的时间（秒）
 
 function sendStatusUpdate(type, answered = null) {
+    return; // 服务器过期了, 悲
     const payload = {
         Type: type,
         QuestionID: currentQuestion.id,
