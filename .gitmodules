@@ -14,3 +14,7 @@
 	path = celeste_wiki
 	url = https://github.com/LuckyBoy-7/CelesteWikiModule
 	branch = gh-pages
+[submodule "celeste_modding_tutorial"]
+	path = celeste_modding_tutorial
+	url = git@github.com:Saplonily/CelesteModdingTutorial.git
+	branch = gh-pages
