@@ -16,7 +16,7 @@ jobs:
           git submodule init celeste_wiki
           git submodule update --init celeste_wiki
           cd celeste_wiki
-          git pull
+          git pull origin gh-pages
           cd ..
 
       - name: Commit submodule update
