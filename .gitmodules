@@ -1,20 +1,20 @@
 [submodule "homo"]
 	path = homo
-	url = https://github.com/Saplonily/homo.git
+	url = git@github.com:Saplonily/homo.git
 
 [submodule "CelesteModTutorial"]
 	path = celeste_mod_tutorial
-	url = https://github.com/Saplonily/CelesteModTutorial
+	url = git@github.com:Saplonily/CelesteModTutorial.git
 	branch = gh-pages
 [submodule "CelesteCommonIssues"]
 	path = celeste_common_issues
-	url = https://github.com/Saplonily/CelesteCommonIssues
+	url = git@github.com:Saplonily/CelesteCommonIssues.git
 	branch = gh-pages
 [submodule "celeste_wiki"]
 	path = celeste_wiki
-	url = https://github.com/LuckyBoy-7/CelesteWikiModule
+	url = git@github.com:LuckyBoy-7/CelesteWikiModule.git
 	branch = gh-pages
 [submodule "celeste_modding_tutorial"]
 	path = celeste_modding_tutorial
-	url = git@github.com:Saplonily/CelesteModdingTutorial.git
+	url = git@github.com:CelesteCNCoders/CelesteModdingTutorial.git
 	branch = gh-pages
