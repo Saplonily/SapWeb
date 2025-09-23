@@ -1,0 +1,28 @@
+name: Update celeste_wiki Submodule
+
+on:
+  workflow_dispatch
+
+jobs:
+  update-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Update celeste_wiki submodule
+        run: |
+          git submodule update --remote celeste_wiki
+
+      - name: Commit submodule update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add celeste_wiki
+          git commit -m "Action: 更新 wiki 子模块"
+
+      - name: Push changes
+        run: |
+          git push
