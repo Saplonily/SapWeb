@@ -9,12 +9,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
 
       - name: Update celeste_wiki submodule
         run: |
-          git submodule update --remote celeste_wiki
+          git submodule init celeste_wiki
+          git submodule update --init celeste_wiki
+          cd celeste_wiki
+          git pull
+          cd ..
 
       - name: Commit submodule update
         run: |
