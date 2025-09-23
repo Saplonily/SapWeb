@@ -12,6 +12,7 @@ jobs:
 
       - name: Update celeste_wiki submodule
         run: |
+          git config submodule.celeste_wiki.url https://github.com/LuckyBoy-7/CelesteWikiModule.git
           git submodule init celeste_wiki
           git submodule update --init celeste_wiki
           cd celeste_wiki
