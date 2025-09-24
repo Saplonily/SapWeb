@@ -1,14 +1,14 @@
 /*#region 根与全局*/
 :root {
-    --nav-background   : #f5f5f5;
+    --nav-background: #f5f5f5;
     --background-filter: opacity(20%);
 
-    --width-shadow  : 2px 2px 8px rgb(0, 0, 0, 0.2);
+    --width-shadow: 2px 2px 8px rgb(0, 0, 0, 0.2);
     --nav-text-color: black;
 }
 
 * {
-    margin : 0px;
+    margin: 0px;
     padding: 0px;
 }
 
@@ -21,11 +21,11 @@ body {
 /*#region 网站默认a标签样式*/
 a:not(.none-site-a) {
     text-decoration: none;
-    color          : rgb(44, 123, 93);
+    color: rgb(44, 123, 93);
 }
 
 a.href-with-underline:not(.none-site-a) {
-    transition   : border 0.25s;
+    transition: border 0.25s;
     border-bottom: 1px dashed rgb(1, 132, 128, 0);
 }
 
@@ -39,22 +39,22 @@ a:not(.none-site-a):hover {
 
 .background-container {
     position: fixed;
-    width   : 100%;
-    height  : 100%;
-    z-index : -1;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     overflow: hidden;
 }
 
 .background-container .background {
-    width           : 100%;
-    height          : 100%;
+    width: 100%;
+    height: 100%;
     background-image: url('../res/heavy/background.webp');
-    background-size : cover;
+    background-size: cover;
 
     transform-origin: center;
-    max-width       : 100%;
-    max-height      : 100%;
-    transform       : scale(1.1);
+    max-width: 100%;
+    max-height: 100%;
+    transform: scale(1.1);
 
     filter: var(--background-filter);
 }
@@ -63,30 +63,30 @@ a:not(.none-site-a):hover {
 
 /*#region 导航栏*/
 .nav-bar {
-    width : 100%;
+    width: 100%;
     height: 64px;
 
     background-color: var(--nav-background);
-    box-shadow      : var(--width-shadow);
+    box-shadow: var(--width-shadow);
 }
 
-.nav-bar>.nav-item {
-    display        : inline-block;
-    height         : 100%;
+.nav-bar > .nav-item {
+    display: inline-block;
+    height: 100%;
     text-decoration: none;
 
     padding: 0px 32px 0px;
 }
 
-.nav-bar>.nav-item.nav-right {
+.nav-bar > .nav-item.nav-right {
     float: right;
 }
 
-.nav-bar>.nav-item .nav-text {
-    display  : inline-block;
-    position : relative;
-    top      : 50%;
-    left     : 50%;
+.nav-bar > .nav-item .nav-text {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 
     color: var(--nav-text-color);
@@ -97,7 +97,7 @@ a:not(.none-site-a):hover {
 /*#region 主要文字容器*/
 .main-container .card p {
     line-height: 1.8em;
-    font-size  : 1.2em;
+    font-size: 1.2em;
 }
 
 .main-container .card h4 {
@@ -105,7 +105,7 @@ a:not(.none-site-a):hover {
 }
 
 .main-container {
-    width : 70%;
+    width: 70%;
     margin: auto;
 }
 
@@ -117,16 +117,16 @@ a:not(.none-site-a):hover {
 
 .main-container .card {
     background-color: rgba(245, 245, 245, 0.75);
-    border          : 1px solid rgb(141, 135, 255);
-    border-radius   : 10px;
-    box-shadow      : 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(141, 135, 255);
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 
     padding: 14px 32px 14px;
-    margin : 32px;
+    margin: 32px;
 }
 
 .main-container hr {
-    margin-top   : 8px;
+    margin-top: 8px;
     margin-bottom: 8px;
 }
 
@@ -142,25 +142,25 @@ a:not(.none-site-a):hover {
 }
 
 .account-dropdown .dropdown-items {
-    list-style     : none;
+    list-style: none;
     list-style-type: none;
-    overflow       : hidden;
-    visibility     : hidden;
+    overflow: hidden;
+    visibility: hidden;
 
     position: absolute;
-    top     : 100%;
-    left    : 0%;
+    top: 100%;
+    left: 0%;
 
     width: 100%;
 
     opacity: 0;
 
     border-radius: 0px 0px 8px 8px;
-    box-shadow   : 0px 3px 5px rgba(0, 0, 0, 0.02);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02);
 
     transform-origin: 50% 0;
-    transform       : translateY(-1em) scale(0.75);
-    transition      :
+    transform: translateY(-1em) scale(0.75);
+    transition:
         opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
         transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         visibility 0.4s;
@@ -168,7 +168,7 @@ a:not(.none-site-a):hover {
 
 .account-dropdown:hover .dropdown-items {
     visibility: visible;
-    opacity   : 1;
+    opacity: 1;
 
     transform: translateY(0);
 }
@@ -179,9 +179,9 @@ a:not(.none-site-a):hover {
 }
 
 .account-dropdown .dropdown-items li {
-    box-sizing      : border-box;
+    box-sizing: border-box;
     background-color: var(--nav-background);
-    text-align      : center;
+    text-align: center;
 
     transition: background-color 0.2s;
 }
@@ -192,15 +192,15 @@ a:not(.none-site-a):hover {
 
 .account-dropdown .dropdown-items li .text {
     display: block;
-    height : 100%;
-    width  : 100%;
+    height: 100%;
+    width: 100%;
     padding: 16px 0;
 }
 
 
 .account-dropdown-animation {
-    color     : rgb(68, 104, 78);
-    display   : inline-block;
+    color: rgb(68, 104, 78);
+    display: inline-block;
     transition: transform 0.314s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
@@ -251,7 +251,7 @@ footer span strong {
     border-radius: 8px;
     color: rgb(44, 123, 93);
     text-decoration: none;
-    transition: 
+    transition:
         background 0.38s cubic-bezier(0.4, 0, 0.2, 1),
         border 0.32s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.38s cubic-bezier(0.4, 0, 0.2, 1),
@@ -262,7 +262,7 @@ footer span strong {
 .main-container a.main-link:hover {
     background: #e3f1fa;
     border: 2px solid #384f5d;
-    box-shadow: 0 6px 24px 0 rgba(44,123,93,0.13);
+    box-shadow: 0 6px 24px 0 rgba(44, 123, 93, 0.13);
     color: #2c7b5d;
     z-index: 1;
 }
