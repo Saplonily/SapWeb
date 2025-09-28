@@ -1,4 +1,4 @@
-name: Update celeste_wiki Submodule
+name: Update celeste_wiki submodule
 
 on:
   workflow_dispatch

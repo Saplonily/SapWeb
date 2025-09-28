@@ -1,0 +1,31 @@
+name: Update modding tutorial submodule
+
+on:
+  workflow_dispatch
+
+jobs:
+  update-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update celeste_modding_tutorial submodule
+        run: |
+          git config submodule.celeste_modding_tutorial.url https://github.com/CelesteCNCoders/CelesteModdingTutorial.git
+          git submodule init celeste_modding_tutorial
+          git submodule update --init celeste_modding_tutorial
+          cd celeste_modding_tutorial
+          git pull origin gh-pages
+          cd ..
+
+      - name: Commit submodule update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add celeste_modding_tutorial
+          git commit -m "Action: 更新 modding tutorial 子模块"
+
+      - name: Push changes
+        run: |
+          git push
