@@ -1,0 +1,1 @@
+function t(){let n=window.location.hash;if(n===""||n==="#")return null;n=n.replace(/^#\/?/,"").replace(/\/+$/,"");const e=n.split("?")[0];return e===""?null:e}function i(n){window.addEventListener("hashchange",()=>n(t()))}function a(n){if(t()===n){window.dispatchEvent(new CustomEvent("hashchange"))}else{window.location.hash="/"+n}}export{i as init,a as navigate,t as parseHash};
