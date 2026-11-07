@@ -16,4 +16,15 @@ window.addEventListener('DOMContentLoaded', function() {
             window.location.href = '/';
         }
     };
+
+    var hiddenLink = document.getElementById('hidden-c2fwY2M-link');
+    var page = document.getElementById('div404');
+    if (!hiddenLink || !page) return;
+
+    hiddenLink.addEventListener('click', function(event) {
+        if (page.classList.contains('grid-collapsed')) return;
+
+        event.preventDefault();
+        page.classList.add('grid-collapsed');
+    });
 });
