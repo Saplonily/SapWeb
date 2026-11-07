@@ -53,7 +53,11 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     var legacyTutorialLink = document.getElementById('legacy-tutorial-link');
-    if (legacyTutorialLink && window.location.href.includes('celeste_mod_tutorial')) {
+    var currentUrl = window.location.href;
+    if (legacyTutorialLink && (
+        currentUrl.includes('celeste_mod_tutorial') ||
+        currentUrl.includes('celeste_modding_tutorial/code_modding')
+    )) {
         legacyTutorialLink.hidden = false;
     }
 
