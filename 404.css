@@ -56,24 +56,62 @@ body {
     transform: rotate(6deg) scale(1.08);
 }
 
-#div404.grid-collapsed::after {
-    content: none;
+#div404.grid-collapsed::before {
+    opacity: 0.7;
 }
 
-#div404.grid-collapsed::before {
-    content: "";
-    z-index: -1;
-    inset: -12%;
-    opacity: 0.34;
-    background-image:
-        linear-gradient(17deg, transparent 0 46%, rgba(74, 144, 164, 0.72) 46.3% 46.8%, transparent 47.1%),
-        linear-gradient(103deg, transparent 0 52%, rgba(173, 212, 241, 0.88) 52.3% 52.7%, transparent 53%),
-        linear-gradient(61deg, transparent 0 37%, rgba(120, 183, 222, 0.62) 37.3% 37.7%, transparent 38%),
-        linear-gradient(142deg, transparent 0 68%, rgba(186, 223, 244, 0.86) 68.3% 68.7%, transparent 69%),
-        repeating-linear-gradient(29deg, transparent 0 31px, rgba(74, 144, 164, 0.48) 31px 32px, transparent 32px 79px),
-        repeating-linear-gradient(117deg, transparent 0 43px, rgba(173, 212, 241, 0.58) 43px 44px, transparent 44px 97px);
-    transform: rotate(-4deg) scale(1.12);
+#div404.grid-collapsed::after {
+    opacity: 0.86;
+}
+
+.grid-shards {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
     pointer-events: none;
+    overflow: hidden;
+    opacity: 0;
+    animation: shards-reveal 0.35s ease-out forwards;
+}
+
+.grid-shards span {
+    position: absolute;
+    left: var(--shard-x);
+    top: var(--shard-y);
+    width: var(--shard-width);
+    height: var(--shard-height);
+    opacity: 0;
+    background-image:
+        linear-gradient(var(--grid-fine) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-fine) 1px, transparent 1px),
+        linear-gradient(var(--grid-structural) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-structural) 1px, transparent 1px);
+    background-size:
+        var(--shard-cell) var(--shard-cell),
+        var(--shard-cell) var(--shard-cell),
+        84px 84px,
+        84px 84px;
+    background-position:
+        var(--shard-offset-x) var(--shard-offset-y),
+        var(--shard-offset-x) var(--shard-offset-y),
+        calc(var(--shard-offset-x) + 4px) calc(var(--shard-offset-y) + 4px),
+        calc(var(--shard-offset-x) + 4px) calc(var(--shard-offset-y) + 4px);
+    -webkit-mask-image: radial-gradient(58% 58% at 50% 50%, #000 45%, transparent 100%);
+    mask-image: radial-gradient(58% 58% at 50% 50%, #000 45%, transparent 100%);
+    transform: rotate(var(--shard-rotation));
+    animation: shard-fade 0.62s ease-out var(--shard-delay) forwards;
+}
+
+@keyframes shards-reveal {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shard-fade {
+    to {
+        opacity: var(--shard-opacity);
+    }
 }
 
 #icon-404 {
@@ -114,6 +152,23 @@ body {
     font-size: 1.1em;
     text-align: center;
     border: 1px solid rgba(74, 144, 164, 0.28);
+}
+
+#legacy-tutorial-link {
+    position: relative;
+    z-index: 1;
+    margin: -1em 12px 1em;
+    color: #35708a;
+    text-align: center;
+}
+
+#legacy-tutorial-link a {
+    color: #35708a;
+    text-decoration: underline;
+}
+
+#legacy-tutorial-link.grid-collapsed a {
+    text-decoration-style: dashed;
 }
 
 #back-home {

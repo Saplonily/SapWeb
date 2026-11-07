@@ -1,4 +1,32 @@
 window.addEventListener('DOMContentLoaded', function () {
+    function createGridShards(page) {
+        var shards = document.createElement('div');
+        shards.className = 'grid-shards';
+        shards.setAttribute('aria-hidden', 'true');
+
+        for (var index = 0; index < 13; index += 1) {
+            var shard = document.createElement('span');
+            var rotation = (Math.random() * 10 - 5).toFixed(2);
+            var offsetX = (Math.random() * 66 - 33).toFixed(1);
+            var offsetY = (Math.random() * 66 - 33).toFixed(1);
+            var cellSize = (Math.random() * 14 + 33).toFixed(1);
+
+            shard.style.setProperty('--shard-x', (Math.random() * 100 - 15).toFixed(1) + '%');
+            shard.style.setProperty('--shard-y', (Math.random() * 100 - 15).toFixed(1) + '%');
+            shard.style.setProperty('--shard-width', (Math.random() * 420 + 220).toFixed(0) + 'px');
+            shard.style.setProperty('--shard-height', (Math.random() * 290 + 150).toFixed(0) + 'px');
+            shard.style.setProperty('--shard-offset-x', offsetX + 'px');
+            shard.style.setProperty('--shard-offset-y', offsetY + 'px');
+            shard.style.setProperty('--shard-cell', cellSize + 'px');
+            shard.style.setProperty('--shard-rotation', rotation + 'deg');
+            shard.style.setProperty('--shard-opacity', (Math.random() * 0.18 + 0.82).toFixed(2));
+            shard.style.setProperty('--shard-delay', (Math.random() * 0.16).toFixed(2) + 's');
+            shards.appendChild(shard);
+        }
+
+        page.appendChild(shards);
+    }
+
     var btnBack = document.getElementById('back-home');
     if (btnBack) {
         if (window.history.length > 1) {
@@ -24,14 +52,25 @@ window.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    var legacyTutorialLink = document.getElementById('legacy-tutorial-link');
+    if (legacyTutorialLink && window.location.href.includes('celeste_mod_tutorial')) {
+        legacyTutorialLink.hidden = false;
+    }
+
     var hiddenLink = document.getElementById('hidden-c2fwY2M-link');
     var page = document.getElementById('div404');
-    if (!hiddenLink || !page) return;
+    if (!page) return;
 
-    hiddenLink.addEventListener('click', function (event) {
-        if (page.classList.contains('grid-collapsed')) return;
+    [hiddenLink, legacyTutorialLink].forEach(function (link) {
+        if (!link) return;
 
-        event.preventDefault();
-        page.classList.add('grid-collapsed');
+        link.addEventListener('click', function (event) {
+            if (page.classList.contains('grid-collapsed')) return;
+
+            event.preventDefault();
+            createGridShards(page);
+            page.classList.add('grid-collapsed');
+            link.classList.add('grid-collapsed');
+        });
     });
 });
