@@ -29,19 +29,14 @@ window.addEventListener('DOMContentLoaded', function () {
 
     var btnBack = document.getElementById('back-home');
     if (btnBack) {
-        if (window.history.length > 1) {
-            btnBack.textContent = '后退页面';
+        if (window.history.length <= 1) {
+            btnBack.remove();
         } else {
-            btnBack.textContent = '返回首页';
-        }
-        btnBack.classList.add('show');
-        btnBack.onclick = function () {
-            if (window.history.length > 1) {
+            btnBack.classList.add('show');
+            btnBack.onclick = function () {
                 window.history.back();
-            } else {
-                window.location.href = '/';
-            }
-        };
+            };
+        }
     }
 
     var btnHome = document.getElementById('go-home');
