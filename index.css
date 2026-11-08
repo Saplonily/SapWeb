@@ -85,6 +85,9 @@ a:not(.none-site-a):hover {
     position: absolute;
     inset: -18%;
     pointer-events: none;
+    animation: grid-lines-pulse 20s infinite;
+    animation-delay: 20s;
+    will-change: filter;
 }
 
 .background-container::before {
@@ -109,6 +112,25 @@ a:not(.none-site-a):hover {
     -webkit-mask-image: radial-gradient(circle at center, #000 0%, rgba(0, 0, 0, 0.3) 78%, transparent 100%);
     mask-image: radial-gradient(circle at center, #000 0%, rgba(0, 0, 0, 0.3) 78%, transparent 100%);
     transform: rotate(6deg) scale(1.08);
+}
+
+@keyframes grid-lines-pulse {
+    0%,
+    5%,
+    100% {
+        filter: none;
+    }
+
+    0.5% {
+        filter: hue-rotate(165deg) saturate(4);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .background-container::before,
+    .background-container::after {
+        animation: none;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
