@@ -1,10 +1,41 @@
 /*#region 根与全局*/
 :root {
     --nav-background: #f5f5f5;
+    --page-background: #dce1e4;
+    --card-background: rgba(245, 245, 245, 0.75);
+    --text-color: #202020;
+    --muted-text-color: rgb(86, 86, 86);
+    --link-background: #f7fcff;
+    --link-border: #badff4;
+    --link-hover-background: #e3f1fa;
     --background-filter: opacity(20%);
 
     --width-shadow: 2px 2px 8px rgb(0, 0, 0, 0.2);
     --nav-text-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --nav-background: #202a2d;
+        --page-background: #11191c;
+        --card-background: rgba(31, 45, 49, 0.9);
+        --text-color: #e5eef0;
+        --muted-text-color: #b7c5c8;
+        --link-background: #20343a;
+        --link-border: #467384;
+        --link-hover-background: #294a54;
+        --nav-text-color: #e5eef0;
+        --width-shadow: 2px 2px 8px rgb(0, 0, 0, 0.45);
+    }
+
+    a:not(.none-site-a) {
+        color: #86d6ad;
+    }
+
+    a:not(.none-site-a):hover {
+        border-color: #73cdb5;
+    }
 }
 
 * {
@@ -13,7 +44,8 @@
 }
 
 body {
-    background: #dce1e4;
+    background: var(--page-background);
+    color: var(--text-color);
 }
 
 /*#endregion*/
@@ -44,7 +76,7 @@ a:not(.none-site-a):hover {
     z-index: -1;
     overflow: hidden;
     isolation: isolate;
-    background: #dce1e4;
+    background: var(--page-background);
 }
 
 .background-container::before,
@@ -77,6 +109,33 @@ a:not(.none-site-a):hover {
     -webkit-mask-image: radial-gradient(circle at center, #000 0%, rgba(0, 0, 0, 0.3) 78%, transparent 100%);
     mask-image: radial-gradient(circle at center, #000 0%, rgba(0, 0, 0, 0.3) 78%, transparent 100%);
     transform: rotate(6deg) scale(1.08);
+}
+
+@media (prefers-color-scheme: dark) {
+    .background-container::before {
+        background-image:
+            linear-gradient(rgba(48, 86, 97, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(48, 86, 97, 0.1) 1px, transparent 1px);
+    }
+
+    .background-container::after {
+        background-image:
+            linear-gradient(rgba(57, 98, 109, 0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(57, 98, 109, 0.15) 1px, transparent 1px);
+    }
+
+    .account-dropdown .dropdown-items li:hover {
+        background-color: #2b3a3e;
+    }
+
+    .main-container a.main-link {
+        color: #86d6ad;
+    }
+
+    .main-container a.main-link:hover {
+        border-color: #7195a0;
+        color: #a4e7c4;
+    }
 }
 
 /*#endregion*/
@@ -136,7 +195,7 @@ a:not(.none-site-a):hover {
 }
 
 .main-container .card {
-    background-color: rgba(245, 245, 245, 0.75);
+    background-color: var(--card-background);
     border: 1px solid rgb(141, 135, 255);
     border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -243,7 +302,7 @@ footer p {
 }
 
 footer .copyright {
-    color: rgb(86, 86, 86)
+    color: var(--muted-text-color)
 }
 
 footer .meo-icp {
@@ -266,8 +325,8 @@ footer span strong {
     margin: 8px 0;
     padding: 8px 18px;
     font-size: 1.15em;
-    background: #f7fcff;
-    border: 2px solid #badff4;
+    background: var(--link-background);
+    border: 2px solid var(--link-border);
     border-radius: 8px;
     color: rgb(44, 123, 93);
     text-decoration: none;
@@ -280,7 +339,7 @@ footer span strong {
 }
 
 .main-container a.main-link:hover {
-    background: #e3f1fa;
+    background: var(--link-hover-background);
     border: 2px solid #384f5d;
     box-shadow: 0 6px 24px 0 rgba(44, 123, 93, 0.13);
     color: #2c7b5d;

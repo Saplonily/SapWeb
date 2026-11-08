@@ -245,3 +245,69 @@ body {
     background: rgba(74, 144, 164, 0.2);
     opacity: 0.85;
 }
+
+@media (prefers-color-scheme: dark) {
+    body,
+    #div404 {
+        background: #11191c;
+        color-scheme: dark;
+    }
+
+    #div404::before,
+    #div404::after {
+        --grid-fine: rgba(48, 86, 97, 0.1);
+        --grid-structural: rgba(57, 98, 109, 0.15);
+    }
+
+    #text404,
+    #desc-404 {
+        color: #8bc4d5;
+    }
+
+    #text404 {
+        text-shadow: 0 4px 24px rgba(57, 118, 137, 0.55), 0 1px 0 #20343a;
+    }
+
+    #p-info {
+        background: #1f2d31;
+        color: #c5d5d8;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+        border-color: rgba(139, 196, 213, 0.28);
+    }
+
+    #legacy-tutorial-link,
+    #legacy-tutorial-link a {
+        color: #b4d8df;
+    }
+
+    #back-home {
+        background: #397d8d;
+    }
+
+    #back-home:hover {
+        background: #2f6878;
+    }
+
+    #go-home {
+        background: #1f2d31;
+        color: #b4d8df;
+        border-color: #397d8d;
+    }
+
+    #go-home:hover {
+        background: #294a54;
+        color: #d1e8ec;
+    }
+
+    #hidden-c2fwY2M-link {
+        background: rgba(139, 196, 213, 0.06);
+    }
+
+    #hidden-c2fwY2M-link:hover {
+        background: rgba(139, 196, 213, 0.2);
+    }
+
+    #div404.grid-collapsed #hidden-c2fwY2M-link {
+        background: rgba(139, 196, 213, 0.24);
+    }
+}
